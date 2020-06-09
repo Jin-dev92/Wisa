@@ -1,0 +1,32 @@
+# PhpStorm PHP 스톰 기업용 라이센스
+- 다운로드 : https://www.jetbrains.com/phpstorm/
+- 공식 메뉴얼 : https://www.jetbrains.com/phpstorm/documentation/
+- 동영상 메뉴얼 : https://laracasts.com/series/how-to-be-awesome-in-phpstorm
+- 테마 : http://www.phpstorm-themes.com/
+- 단축키 안내 블로그 : http://www.programkr.com/blog/MATNyADMwYT4.html
+- 기타 추천 사용법 등등 문의 : 정병섭
+
+- 라이센스 키는 아래 3가지 타입중 한가지 방법으로 선택하여 사용하시면 됩니다.
+----- [License Key] -----
+
+===== LICENSE BEGIN =====
+2754991-31102015
+00002fp56V0tbScSzp0wlIxrKcI2pr
+HYXNOhLbvbrJCsInM1pH4VeTHJNlGF
+9BPRctBjHTnkCX7VsC1L1M85x!u7mh
+===== LICENSE END =====
+
+----- [License Server] -----
+https://account.jetbrains.com/a/96ve22ax
+
+----- [activation code] -----
+8I1KOTH5KN-eyJsaWNlbnNlSWQiOiI4STFLT1RINUtOIiwibGljZW5zZWVOYW1lIjoiaGFuZXVsc2VvbSIsImFzc2lnbmVlTmFtZSI6IkJ5ZW9uZ1N1YiBKZW9uZyIsImFzc2lnbmVlRW1haWwiOiJzenBvcGluQGdtYWlsLmNvbSIsImxpY2Vuc2VSZXN0cmljdGlvbiI6IiIsImNoZWNrQ29uY3VycmVudFVzZSI6dHJ1ZSwicHJvZHVjdHMiOlt7ImNvZGUiOiJQUyIsImZhbGxiYWNrRGF0ZSI6IjIwMTctMDctMjYiLCJwYWlkVXBUbyI6IjIwMTgtMDctMjUifV0sImhhc2giOiI2MzM4ODU3LzM0Mjc5ODYiLCJncmFjZVBlcmlvZERheXMiOjcsImF1dG9Qcm9sb25nYXRlZCI6dHJ1ZSwiaXNBdXRvUHJvbG9uZ2F0ZWQiOnRydWV9-DUcZrGWntb3gcny2B09uOtXPpFUfAgR1NJ3TT1UIt6DHML8JOsVq+s+4u49YiJ/SKusSC1pt6jzzoAkWf4/Z0dsLfeKgCYglzCWQZqnKIG7HBWcdjnkD+Y3pbVK+V6iyP3n0yK7C6kRqqOToBpxHDKeGrWHiWMePW0/c+54/uOUfTOzCguTa4BgeLmhEcUjP/HC8kjpwsGFZ/ygreWJu5sqYrKDYmB0uSUpugAti/dOfdRbveUqPF/tn4I6ZWdoFGJ61Y3+FFBE7EZlvL93NeY0Tv9iTerb4/2bGba/pUULs2WfD9c86Q8hPW0isrVEtDU1XVzH1GDCwAj84wD4UpA==-MIIEPjCCAiagAwIBAgIBBTANBgkqhkiG9w0BAQsFADAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBMB4XDTE1MTEwMjA4MjE0OFoXDTE4MTEwMTA4MjE0OFowETEPMA0GA1UEAwwGcHJvZDN5MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxcQkq+zdxlR2mmRYBPzGbUNdMN6OaXiXzxIWtMEkrJMO/5oUfQJbLLuMSMK0QHFmaI37WShyxZcfRCidwXjot4zmNBKnlyHodDij/78TmVqFl8nOeD5+07B8VEaIu7c3E1N+e1doC6wht4I4+IEmtsPAdoaj5WCQVQbrI8KeT8M9VcBIWX7fD0fhexfg3ZRt0xqwMcXGNp3DdJHiO0rCdU+Itv7EmtnSVq9jBG1usMSFvMowR25mju2JcPFp1+I4ZI+FqgR8gyG8oiNDyNEoAbsR3lOpI7grUYSvkB/xVy/VoklPCK2h0f0GJxFjnye8NT1PAywoyl7RmiAVRE/EKwIDAQABo4GZMIGWMAkGA1UdEwQCMAAwHQYDVR0OBBYEFGEpG9oZGcfLMGNBkY7SgHiMGgTcMEgGA1UdIwRBMD+AFKOetkhnQhI2Qb1t4Lm0oFKLl/GzoRykGjAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBggkA0myxg7KDeeEwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgWgMA0GCSqGSIb3DQEBCwUAA4ICAQC9WZuYgQedSuOc5TOUSrRigMw4/+wuC5EtZBfvdl4HT/8vzMW/oUlIP4YCvA0XKyBaCJ2iX+ZCDKoPfiYXiaSiH+HxAPV6J79vvouxKrWg2XV6ShFtPLP+0gPdGq3x9R3+kJbmAm8w+FOdlWqAfJrLvpzMGNeDU14YGXiZ9bVzmIQbwrBA+c/F4tlK/DV07dsNExihqFoibnqDiVNTGombaU2dDup2gwKdL81ua8EIcGNExHe82kjF4zwfadHk3bQVvbfdAwxcDy4xBjs3L4raPLU3yenSzr/OEur1+jfOxnQSmEcMXKXgrAQ9U55gwjcOFKrgOxEdek/Sk1VfOjvS+nuM4eyEruFMfaZHzoQiuw4IqgGc45ohFH0UUyjYcuFxxDSU9lMCv8qdHKm+wnPRb0l9l5vXsCBDuhAGYD6ss+Ga+aDY6f/qXZuUCEUOH3QUNbbCUlviSz6+GiRnt1kA9N2Qachl+2yBfaqUqr8h7Z2gsx5LcIf5kYNsqJ0GavXTVyWh7PYiKX4bs354ZQLUwwa/cG++2+wNWP+HtBhVxMRNTdVhSm38AknZlD+PTAsWGu9GyLmhti2EnVwGybSD2Dxmhxk3IPCkhKAK+pl0eWYGZWG3tJ9mZ7SowcXLWDFAk0lRJnKGFMTggrWjV8GYpw5bq23VmIqqDLgkNzuoog==
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+맨 오른쪽 activation 키 : http://80.211.190.88:1027
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+[안내]
+정종석 팀장님 사비로 구매한 기업용 라이센스입니다
+라이센스가 보장된 1년간 업데이트가 가능하며
+1년 후에는 추가 업데이트만 불가능할 뿐 마지막 업데이트 시점의 프로그램으로 계속 사용 가능합니다
+대표님께서 사용 해보고 괜찮으면 사준다고 말은 하셨습니다.

@@ -1,0 +1,107 @@
+﻿[사이트 관리자 접속]
+URL /_manage
+URL /a
+## 비밀번호는 PM문의 또는 인트라넷 서비스 관리에서 확인
+## 주요 기본 비밀번호 wisa/wisa2015 wisa/wisa2016
+
+[사용스킨찾기]
+관리자 > 디자인 > 스킨관리 > 스킨명
+
+[프론트 기본구조]
+// _manage : 필요 한글 변수 생성
+// _engine : 필요 소스 코드 생성
+// _skin : 뷰 (HTML 및 한글변수 사용)
+
+[공통 소스 위치]
+- 전체 공통
+skin_module/_common_module.php : 커스텀위주)
+
+- 스킨사용 공통:스킨이 사용되는 모든곳의 소스 관리 : 기본구조와 동일하여 _manage, _engine 사용방법 동일
+wm_engine_SW/_manage/skin_module/_skin_module.php
+wm_engine_SW/_engine/skin_module/_skin_module.php
+
+[기본 소스 위치]
+예제 URL) http://tckjong.mywisa.co.kr/shop/big_section.php?cno1=1033 : /shop/big_section.php > shop_big_section.php
+wm_engine_SW/_manage/skin_module/shop_big_section.php : 필요 (한글) 변수관리
+wm_engine_SW/_engine/skin_module/shop_big_section.php : 필요 소스 관리
+_skin/tckjong/CORE/shop_big_section.wsr : 뷰 (HTML 및 한글변수 사용)
+
+[관리자 기본 구조]
+예제 URL) http://tckjong.mywisa.co.kr/_manage/?body=product@product_register : product@product_register > product/product_register.php
+- 기본 PHP 구조라 프론트 기본구조를 따를 필요가 없음
+
+[모듈구조] : 기본 프론트 구조와 다른점은 $_replace_datavals 코드의 사용
+- $_replace_datavals : 모듈 내부에서 사용할 한글 및 변수 코드정보
+
+(예제)
+- [변수 선언, 한글 및 코드]
+$_replace_code['common_module']['content_prd_info']="";
+$_replace_hangul['common_module']['content_prd_info']="상품게시판상품정보";
+$_code_comment['common_module']['content_prd_info']="상품평 또는 상품 질문과 답변 리스트의 상품 정보";
+$_replace_datavals['common_module']['content_prd_info']="상품번호:pno;상품명:name;상품이미지:img:상품중이미지 (상품이미지 설정과 관계없이 150x150 고정);상품소이미지:simg:상품소이미지 ($cfg[thumb3_w_mng] x $cfg[thumb3_h_mng]);상품중이미지:mimg:상품중이미지 ($cfg[thumb2_w_mng] x $cfg[thumb2_h_mng]);상품아이콘:icons;판매가:sell_prc_str;소비자가:normal_prc;적립금:milage;상품코드:code;";
+
+- [모듈을 불러와서 사용할 한글과 코드를 치환]
+$_line = getModuleContent("content_prd_info");
+$prd['pno'] = $pno;
+$prd['img'] = mainImg(150, 150);
+$prd['simg'] = mainImg($prd['w3'], $prd['h3'], 3);
+$prd['mimg'] = mainImg($prd['w2'], $prd['h2'], 2);
+$prd['icons'] = prdIcons();
+$_tmp = lineValues("content_prd_info", $_line, $prd, "common_module");
+$_replace_code['common_module']['content_prd_info'] = $_tmp;
+
+- [해당 모듈]
+<div class="miniinfo">
+	<div class="img"><a href="{{$사이트주소}}/shop/detail.php?pno={{$상품번호}}" alt="상품이미지">{{$상품이미지}}</a></div>
+	<div class="list">
+		<p class="name">{{$상품명}} {{if(상품아이콘)}}{{$상품아이콘}}{{end(상품아이콘)}}</p>
+		<ul>
+			{{if(상품코드)}}<li>상품코드 : <span>{{$상품코드}}</span></li>{{end(상품코드)}}
+			{{if(적립금)}}<li>적립금 : <span>{{$화폐단위전}}{{$적립금}}{{$화폐단위후}}</span></li>{{end(적립금)}}
+			{{if(소비자가)}}<li>소비자가 : {{$화폐단위전}}<span class="nprice">{{$소비자가}}</span>{{$화폐단위후}}</li>{{end(소비자가)}}
+			<li>판매가 : {{$화폐단위전}}<strong>{{$판매가}}</strong>{{$화폐단위후}}</li>
+		</ul>
+	</div>
+	<div class="btn_mini">
+		<span class="box_btn middle white2"><a href="{{$사이트주소}}/shop/detail.php?pno={{$상품번호}}">상품 상세보기</a></span>
+		<span class="box_btn middle white2"><a href="{{$사이트주소}}/shop/product_qna.php?pno={{$상품번호}}">해당 상품문의</a></span>
+		<span class="box_btn middle white2"><a href="{{$사이트주소}}/shop/product_review.php?pno={{$상품번호}}">해당 상품후기</a></span>
+	</div>
+</div>
+
+## [product_box 모듈 구조] : 공통 상품 박스 - 기본구조, 모듈구조를 기본
+skin_module/_skin_module.php
+_manage > $_replace_hangul['common_module']['product_box']="기본상품박스";
+_engine > $_replace_code['common_module']['product_box'] = getModuleContent("product_box");
+:: product_box 의 경우 lineValues 사용 없이 상품 공통 영역을 불러옴
+:: 상품과 관련된 모든곳은 shop.lib.php > prdOneData 함수를 사용하기 때문에
+:: 해당 prdOneData 함수에 필요 코드를 넣으면 됨
+
+[주요 라이브러리]
+wm_engine_SW/_engine/include/design.lib.php
+wm_engine_SW/_engine/include/shop.lib.php
+wm_engine_SW/_engine/include/common.lib.php
+wm_engine_SW/_config/set.tbl.php
+wm_engine_SW/_config/set.common.php
+wm_engine_SW/_engine/include/db.lib.php
+/common.js
+
+[Mysql DB] : 실서버 phpMyAdmin 확인법
+URL / ~mydb
+URL / pma
+위 두가지 중 하나
+##정보는 소스의 dbcon.php 확인
+
+- 공용DB:임대몰 포함
+http://wec.wisa.re.kr/~dnldma
+root/tlsghk@2003
+
+- sw 공통 사이트
+id : wisa
+Pw : dnltksdldirl
+
+10.1.1.64
+foodnamoo
+we21hKRjwH9rY
+v3_foodnamoo
+http://foodnamoo.mywisa.co.kr

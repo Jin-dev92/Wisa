@@ -1,0 +1,22 @@
+[기본사이트]
+wm_engine_SW/_engine/include/header/common.inc.php
+include_once $engine_dir."/_engine/include/classes/Custom_w.class.php";
+<script type="text/javascript" src="<?=$engine_url?>/_engine/common/Custom_w.js"></script>
+
+[관리자페이지]
+_manage/index.php
+include_once $engine_dir."/_engine/include/classes/Custom_w.class.php";
+wm_engine_SW/_manage/manage.header.php
+<script type="text/javascript" src="<?=$engine_url?>/_engine/common/Custom_w.js"></script>
+
+[기본 폼]
+<form id='moveBoardPostForm' action="/main/exec.php" method='post'>
+	<input type="hidden" name="exec_file" value="include/classes/Custom_w.exe.php">
+	<input type="hidden" name="exec" value="moveBoardPost">
+	<input type="hidden" name="body" value="<?=$_GET['body']?>">
+</form>
+
+// skin_module/_common_module.php
+if( !defined("_set_custom_w") ){
+	include_once $engine_dir."/_engine/include/classes/Custom_w.class.php";
+}

@@ -1,0 +1,10 @@
+위피(사내 인트라넷)
+- http://wep.wisa.co.kr/
+피엠오(스케줄 관리)
+- http://pmo.wisa.co.kr/
+위사 개발 문서
+- http://developers.wisa.co.kr/
+솔루션 고객센터
+- http://help.wisa.co.kr/manual
+위사 알림(업데이트 등 공지)
+- http://www.wisa.co.kr/bbs/notice

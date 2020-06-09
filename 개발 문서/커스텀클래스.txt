@@ -1,0 +1,32 @@
+[[[[[커스텀 클래스]]]]]
+
+====================================================================================================
+wm_engine_SW/_engine/include/classes/Custom_w.class.php :: php 함수
+wm_engine_SW/_engine/common/Custom_w.js :: js 함수
+wm_engine_SW/_engine/include/classes/Custom_w.exe.php
+
+====================================================================================================
+wm_engine_SW/_engine/include/classes/Custom_w.exe.php
+
+[exe URL 호출법]
+http://foodnamoo.mywisa.co.kr/main/exec.php?exec_file=include/classes/Custom_w.exe.php&exec=moveBoardPost
+
+[exe 폼 호출법]
+<form action="/main/exec.php">
+	<input type="hidden" name="exec_file" value="include/classes/Custom_w.exe.php">
+	<input type="hidden" name="exec" value="moveBoardPost">
+</form>
+
+[exe Ajax 호출법]
+$.ajax({
+	url:root_url+'/main/exec.php',
+	dataType:'HTML',
+	type:'POST',
+	data:{
+		'exec':'moveBoardPost',
+		'exec_file':'include/classes/Custom_w.exe.php'
+	},
+	success:function(result){
+		// 처리 위치
+	}
+});

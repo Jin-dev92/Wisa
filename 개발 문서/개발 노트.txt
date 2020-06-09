@@ -1,0 +1,83 @@
+2018.04.17
+
+//php 보안 및 in_Array를 통한 접근권한
+
+<?php
+include_once "../../_config/set.php";
+if( !function_exists('sql_query') ){
+	include_once $engine_dir."/_engine/include/common.lib.php";
+}
+//새 파일 만들때  세팅
+$no=$_POST['no'];
+$no = (int) numberOnly($no);
+//숫자형 이라고 생각 될때 int 처리와 numberOnly($a)로 보안
+$comment=addslashes($_POST['contents']);
+$is_use = $_GET['is_use']; // Y, N
+    
+$_testIpList = array(
+	'118.129.243.61',
+	'118.129.243.62',
+	'118.129.243.67',
+	'118.129.243.64',
+);
+
+if(in_array($is_use, $_testIpList)){
+	echo "Asdfasdf";
+}
+
+if( $is_use == '118.129.243.61' ){
+	echo "";
+}
+//개발용 서버가 없을 경우에 아이피를 이용하여 접근방지한다. $[REMOTE_ADRR].~~
+
+addslashes(); // DB에 입력될때, UPDATE, INSERT 할떄 필수 //
+stripslashes(); // 디코딩
+
+htmlspecialchars(); // DB에 있는것 또는 어디선가 받아온것을 HTML로 출력할때
+htmlspecialchars_decode(); // 디코딩
+
+$asdfasdf = serialize($_POST); // 배열이나 여러데이터를 하나의 인코딩된 문자로 만들어줌
+
+// a:11:{s:2:"no";s:1:"4";s:13:"order_menu_no";s:1:"1";s:3:"ono";s:14:"20180119-0C7C7";s:9:"member_no";s:2:"10";s:8:"admin_no";s:1:"0";s:3:"pno";s:2:"73";s:4:"year";s:4:"2018";s:5:"month";s:1:"2";s:3:"day";s:54:"[1,2,5,6,7,8,9,12,13,14,15,16,19,20,21,22,23,26,27,28]";s:9:"menu_term";s:2:"20";s:8:"reg_date";s:10:"1516347308";}
+json_encode();
+// [1,2,5,6,7,8,9,12,13,14,16,19,20,21,22,23,26,27,28]
+json_decode();
+md5(); // 암호화중에 그냥 평범한것 // 해킹우려가 살짝있음 하지만 많이씀 우리도 씀
+
+urlencode();// 크롬 주소에보면 나옴
+urldecode();
+
+// xss_clean; // 크로스 사이트 스크립팅
+ ?>
+
+2018.04.24
+
+- 사용자 코드 및 기본 상품리스트의 소스 위치
+wm_engine_SW/_manage/skin_module/_skin_module.php
+:: $_replace_hangul['common_module']['product_box']="기본상품박스";
+wm_engine_SW/_engine/include/design.lib.php
+:: $_user_code_typec['p'] = "상품번호:nidx:..........";
+wm_engine_SW/_engine/include/shop.lib.php
+:: function prdOneData
+
+2018.04.27
+페이지를 읽을  css -> html -> script 순
+custom_w::  //::의미 static
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+2018.05.24
+1. var_dump를 찍고싶은데 페이지가 넘어가야할 경우
+-> var_dump를 찍고 exit;
+동작 실행 후에 크롬 개발도구 -> Network 에서 로딩된 파일 확인 (보통 Preview에 있음)
+2. input type="text" 값을 불러올 떄는 trim()을 사용하여 데이터 처리하는 것이 좋다.
+3. 이메일 같은 경우엔 각 엘레멘트에 직접 스타일을 준다. (메일에 css가 바깥의 css에 영향을 줄 수 있기 때문에)
+4. html에 어떤 요소가 있는지 확인 하고 싶을 떄 if(selector.length > 0) 이런식으로 표기함
+5. 엔진 업데이트 때문에라도 기존 소스에 끼여넣기를 자제하자. (충돌 날 수 있음)
+6. $(asdasda).length -> 이 표기 법보다
+    var aasdasd= $(asdasdasds);
+    asdasda.length -> 이 표기법이 리소스를 덜 잡아먹는다.
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+2018.05.25
+2018.06.07
+addslash 일일이 쓰긴 힘들땐 array_map을 사용한다. (커스텀함수도 사용가능.)
+//$data = array_map('addslash',trim($data));

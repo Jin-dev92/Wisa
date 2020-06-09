@@ -1,0 +1,102 @@
+﻿함수 레퍼런스
+- common.lib.php
+    textSplit
+    del_html        
+    JC
+    addBar
+    trncCart
+    extDateReady
+    left
+    right
+    setMktScript
+    mainPoll
+    mainPollItem
+    encode_jumin
+    php2java
+    getMembercon
+    strip_domain
+    content_ord
+    makePGLog
+    server_sync
+    flaUpVerChk
+    seVerChk
+    fputcsvtmp
+    ordChgHold
+    setListURL
+    getListURL
+    extractParam
+    
+- db.lib.php
+    idc_alert
+    del_query
+    report
+    getMySQLVer
+    sql_affected
+    
+- design.lib.php
+    versionChk
+    oriPageUrl
+    editSkinNotice
+    titleMGName
+    ucodeImageLink
+    getEditPageName
+    getPageAddContent
+    scanF
+    getTsDesign
+    
+- ftp.lib.php
+    fsUploadFile
+    fsMakeDir
+    fsDeleteFile
+    fsFileDown
+    ftp_is_dir
+    
+- member.lib.php
+    checkRegNum
+    updateMemberIdField
+    
+- milage.lib.php
+    pointLoop
+    ctrlPoint
+    usePoint
+    milageChanging
+    
+- shop.lib.php
+    getSCate
+    setLimitPrd
+    setLimitOption
+    setLimitPrd_finish
+    resetLimitPrd
+    ordGift
+    cateNavigator
+    cashReceiptView
+    
+- shop2.lib.php
+    totalOrderPrice
+    deliveryPrc
+    deliveryStr
+    
+- shop_detail.lib.php
+    prdOptionImgList
+    prdCache
+    
+- wingpos.lib.php
+    setOutputToHold
+
+클래스 레퍼런스
+- OrderCart
+    orderCart::orderCart
+    
+- Cart
+    Cart::setconf
+
+- DBSessionHandler
+    DBSessionHandler::__construct
+    DBSessionHandler::open
+    DBSessionHandler::close
+    DBSessionHandler::read
+    DBSessionHandler::write
+    DBSessionHandler::destroy
+    DBSessionHandler::gc
+    DBSessionHandler::unserialize
+    

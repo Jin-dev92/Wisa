@@ -1,0 +1,74 @@
+SELECT m.*,o.* FROM `wm_milage` m INNER JOIN `wm_order` o ON o.`member_no` = m.`member_no` WHERE m.member_no = 13 GROUP BY m.`no`
+
+
+SELECT m.*, pop.*
+FROM `wm_milage` AS m INNER JOIN (SELECT op.*, p.* FROM `wm_order_product` op INNER JOIN `wm_product` p ON op.`pno`=p.`no`) AS pop
+WHERE m.`member_no` = 13
+
+
+(SELECT op.*, p.*
+FROM `wm_order_product` op INNER JOIN `wm_product` p ON op.`pno`=p.`no`)
+
+{$member['no']}
+
+
+SELECT m.*, pop.*
+FROM `wm_milage` AS m INNER JOIN (SELECT op.ono, p.* FROM `wm_order_product` op INNER JOIN `wm_product` p ON op.`pno`=p.`no`) AS pop ON m.target_no=pop.ono
+WHERE m.`member_no` = 13 GROUP BY m.`no`
+
+
+SELECT m.*, opp.*
+FROM `wm_milage` AS m INNER JOIN  (SELECT op.`ono`, p.`updir`, p.`upfile1`, p.`upfile2`, p.`upfile3` FROM `wm_order_product` op INNER JOIN `wm_product` p ON op.`pno`=p.`no`) AS opp
+WHERE m.`target_no` = opp.`ono` AND m.`member_no` = 13
+
+SELECT *
+FROM `wm_milage`
+WHERE `member_no` = 13 AND (`target_no` = NULL OR `target_no` = "");
+
+
+
+CREATE TABLE mari_recomment(
+    `no` int(10) NOT NULL auto_increment COMMENT 'pk',
+    `db` varchar(10) NOT NULL COMMENT 'db명',
+    `parent_no` int(10) NOT NULL DEFAULT 0 COMMENT '부모번호',
+    `member_no` int(10) NOT NULL DEFAULT 0 COMMENT '회원번호',
+    `admin_no` int(10) NOT NULL DEFAULT 0 COMMENT '관리자번호',
+    `comment` text NOT NULL,
+    `reg_date`	int(10) NOT NULL,
+    PRIMARY KEY(`no`),
+    KEY `db` (`db`),
+    KEY `parent_no` (`parent_no`),
+    KEY `member_no` (`member_no`),
+    KEY `admin_no` (`admin_no`)
+    )ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+    
+SELECT sum(if(dlv_hold='Y',1, 0)) as hold_Y, sum(if(dlv_hold!='Y',1, 0)) as hold_N 
+FROM $tbl[order_product] 
+WHERE ono='20180308-E89D8' and stat in (1, 2, 3, 11)
+
+
+hold_Y = dlv_hold가 Y면 1, 아니면 0
+hold_N = dlv_hold가 Y가 아니면 1 아니면 0
+
+(dlv_hold = Y)
+hold_Y = 1
+hold_N = 0
+
+(dlv_hold = N)
+hold_Y = 0
+hold_N = 1
+
+(dlv_hold = B)
+hold_Y = 0
+hold_N = 1
+
+SELECT poi.`iname`
+FROM `wm_product_option_item` AS poi LEFT JOIN `wm_order_product` AS op ON poi.`pno` = op.`pno`
+WHERE poi.`opno` = $prd_info_1[0] AND poi.`no` = $prd_info_1[1]
+
+
+
+
+
+
+
